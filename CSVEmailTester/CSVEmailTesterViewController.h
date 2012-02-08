@@ -10,6 +10,6 @@
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 
-@interface CSVEmailTesterViewController : UIViewController <MFMailComposeViewControllerDelegate>
+@interface CSVEmailTesterViewController : UITableViewController <MFMailComposeViewControllerDelegate>
 
 @end

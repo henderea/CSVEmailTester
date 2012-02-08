@@ -16,6 +16,7 @@
 		9D692E6714E29FAB0075BD97 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D692E6514E29FAB0075BD97 /* MainStoryboard.storyboard */; };
 		9D692E6A14E29FAB0075BD97 /* CSVEmailTesterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D692E6914E29FAB0075BD97 /* CSVEmailTesterViewController.m */; };
 		9D692E7114E2A7AC0075BD97 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D692E7014E2A7AC0075BD97 /* MessageUI.framework */; };
+		9D692E9114E328F30075BD97 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D692E9014E328F30075BD97 /* Logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		9D692E6814E29FAB0075BD97 /* CSVEmailTesterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSVEmailTesterViewController.h; sourceTree = "<group>"; };
 		9D692E6914E29FAB0075BD97 /* CSVEmailTesterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSVEmailTesterViewController.m; sourceTree = "<group>"; };
 		9D692E7014E2A7AC0075BD97 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		9D692E9014E328F30075BD97 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		9D692E5A14E29FAB0075BD97 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9D692E9014E328F30075BD97 /* Logo.png */,
 				9D692E5B14E29FAB0075BD97 /* CSVEmailTester-Info.plist */,
 				9D692E5C14E29FAB0075BD97 /* InfoPlist.strings */,
 				9D692E5F14E29FAB0075BD97 /* main.m */,
@@ -154,6 +157,7 @@
 			files = (
 				9D692E5E14E29FAB0075BD97 /* InfoPlist.strings in Resources */,
 				9D692E6714E29FAB0075BD97 /* MainStoryboard.storyboard in Resources */,
+				9D692E9114E328F30075BD97 /* Logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +202,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Eric Henderson (9VJDDX5J65)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -213,6 +217,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2B5859D8-FBD8-40C6-816B-81E08DD61F88";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -223,7 +228,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Eric Henderson (9VJDDX5J65)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -232,6 +237,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2B5859D8-FBD8-40C6-816B-81E08DD61F88";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
