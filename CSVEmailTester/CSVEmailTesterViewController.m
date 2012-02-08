@@ -3,58 +3,34 @@
 //  CSVEmailTester
 //
 //  Created by Eric Henderson on 2/8/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "CSVEmailTesterViewController.h"
 
 @implementation CSVEmailTesterViewController
 
-- (void)didReceiveMemoryWarning
+- (IBAction)sendEmailClicked:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
+    if ([MFMailComposeViewController canSendMail])
+    {
+        MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+        mailViewController.mailComposeDelegate = self;
+        [mailViewController setSubject:@"Analysis Results."];
+        NSString *adata = @"General Info\nShooter, Eric\nDate Fired, 2/3/2012\nPlace, RHIT\nTemperature, 24 C\nTarget Distance, 100 yards\nShots Fired, 5\n\nSerial #, 12345\nProjectile, 50 cal\nLot #, 25\nProjectile Mass, 5g\n\n\nStatistics (in inches)\nExtreme Spread X, 10\nExtreme Spread Y, 10\nExtreme Spread Group, 10\nMean Radius, 5\nSigma X, 0.5\nSigma Y, 0.5\nFurthest Left, -5\nFurthest Right, 5\nHighest Round, 5\nLowest Round, -5\nCEP Radius, 5\n\n\nShot Record (in inches)\nPoint #, X Value, Y Value\n1, -5, 0\n2, 0, 5\n3, 0, 0\n4, 0, -5\n5, 5, 0";
+        [mailViewController addAttachmentData:[adata dataUsingEncoding:NSASCIIStringEncoding] mimeType:@"text/csv" fileName:@"results.csv"];
+        [self presentModalViewController:mailViewController animated:YES];
+    }
+    else
+    {
+        NSLog(@"Device is unable to send email in its current state.");
+    }
 }
 
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad
+- (void)mailComposeController:(MFMailComposeViewController *)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError *)error
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 @end
